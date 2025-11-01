@@ -23,13 +23,11 @@ import Link from "next/link"
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-      {/* Animated background elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-      {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/50 border-b border-teal-500/20">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <motion.div
@@ -58,7 +56,6 @@ export default function HomePage() {
         </nav>
       </header>
 
-      {/* Hero Section */}
       <section className="relative container mx-auto px-6 py-32 text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <motion.div
@@ -85,25 +82,31 @@ export default function HomePage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link href="/download" className="no-underline">
-                        <Button
-              size="lg"
-              className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-teal-500/30 hover:shadow-teal-500/50 transition-all hover:scale-105"
-            >
-              <Download className="w-5 h-5 mr-2" />
-              Download ISO
-            </Button>
-            
-            
-            </Link>
-
-            <Link href="/guide" className="no-underline">
               <Button
                 size="lg"
-                variant="outline"
-                className="border-teal-500/30 text-teal-400 hover:bg-teal-500/10 px-8 py-6 text-lg rounded-xl backdrop-blur-sm bg-transparent"
+                className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-teal-500/30 hover:shadow-teal-500/50 transition-all hover:scale-105"
+              >
+                <Download className="w-5 h-5 mr-2" />
+                Download ISO
+              </Button>
+            </Link>
+            {/* New Buttons for Business-Model and Educate Users */}
+            <Link href="/business-model" className="no-underline">
+              <Button
+                size="lg"
+                className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all hover:scale-105"
+              >
+                <Award className="w-5 h-5 mr-2" />
+                Business Model
+              </Button>
+            </Link>
+            <Link href="/educate-users" className="no-underline">
+              <Button
+                size="lg"
+                className="bg-green-600 hover:bg-green-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-green-500/30 hover:shadow-green-500/50 transition-all hover:scale-105"
               >
                 <BookOpen className="w-5 h-5 mr-2" />
-                Learn More
+                Educate Users
               </Button>
             </Link>
           </div>
